@@ -52,7 +52,7 @@
             padding: 0px;
             border: 0px;
         }
-        button{
+        header button, .s_contents_showmore_btn, footer button, #modal button{
             font-family: Pretendard;
             font-size: 16px;
             font-weight: 700;
@@ -68,6 +68,65 @@
         }
         p{
             margin: 0;
+        }
+        #modal{
+            position: fixed;
+            display: none;
+            justify-content: center;
+            align-content: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+        }
+        #modal .modal_wrap{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 600px;
+            height: 400px;
+            background-image: url("media/Modal_Background.png");
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
+            border-radius: 30px;
+        }
+        #modal .modal_cat_img{
+            margin-top: 60px;
+        }
+        #modal .modal_thank_you{
+            text-align: center;
+        }
+        #modal .modal_thank_you h1{
+            font-size: 36px;
+            font-weight: 700;
+            color: #D97652;
+            margin: 24px 0px 0px;
+        }
+        #modal .modal_thank_you h3{
+            font-size: 14px;
+            font-weight: 400;
+            margin: 12px 0px 0px;
+        }
+        #modal .modal_ok_btn{
+            margin-top: 38px;
+            width: 183px;
+            height: 50px;
+        }
+        #scroll_top{
+            position: absolute;
+            background-image: url("media/scroll-top-btn-off.png");
+            /*display: none;*/
+            /*justify-content: center;*/
+            /*align-content: center;*/
+            width: 50px;
+            height: 50px;
+            bottom: 19px;
+            right: 24px;
+            z-index: 99;
+            cursor: pointer;
+        }
+        #scroll_top:hover{
+            background-image: url("media/scroll-top-btn-on.png");
         }
         .container{
             display: flex;
@@ -170,7 +229,7 @@
         }
         section .s_intro_bed_cat_img, .s_contents_catimgbox_1_1_img, .s_contents_catimgbox_1_2_img, .s_contents_catimgbox_1_3_img, .s_contents_catimgbox_2_1_img, .s_contents_catimgbox_2_2_img, .s_contents_catimgbox_2_3_img{
             border-radius: 30px;
-            filter: drop-shadow(10px 10px 30px rgba(0,0,0,0.25));
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
         }
         section .s_contents{
             width: 1280px;
@@ -241,9 +300,8 @@
         section .s_contents_address_txt_2{
             font-weight: 500;
         }
-        section .s_contents_address_map{
+        section #s_contents_address_map{
             margin-top: 48px;
-            background-color: gray;
             height: 520px;
             border-radius: 12px;
         }
@@ -339,16 +397,16 @@
             margin-right: 20px;
         }
         footer .f_outro_blog_btn{
-            background-image: url("../hodu-fe-project/media/icon-blog.png");
+            background-image: url("media/icon-blog.png");
         }
         footer .f_outro_instagram_btn{
-            background-image: url("../hodu-fe-project/media/icon-insta.png");
+            background-image: url("media/icon-insta.png");
         }
         footer .f_outro_facebook_btn{
-            background-image: url("../hodu-fe-project/media/icon-facebook.png");
+            background-image: url("media/icon-facebook.png");
         }
         footer .f_outro_youtube_btn{
-            background-image: url("../hodu-fe-project/media/icon-youtube.png");
+            background-image: url("media/icon-youtube.png");
         }
     /* footer CSS end */
     </style>
@@ -357,7 +415,7 @@
 <div class="container">
     <header class="h_area">
         <div class="h_top_category">
-            <img src="../hodu-fe-project/media/Logo-fin.png" alt="HODU_LOGO">
+            <img src="media/Logo-fin.png" alt="HODU_LOGO">
 
             <nav class="h_top_menu">
                 <ul class="h_top_menu">
@@ -380,7 +438,7 @@
                 <button class="h_download_btn">Download</button>
             </div>
             <div class="h_intro_box_cat_img">
-                <img src="../hodu-fe-project/media/heading_cat.png" alt="box_cat">
+                <img src="media/heading_cat.png" alt="box_cat">
             </div>
         </div>
     </header>
@@ -388,7 +446,7 @@
     <section class="s_area">
         <div class="s_intro">
             <div class="s_intro_bed_cat" >
-                <img class="s_intro_bed_cat_img" src="../hodu-fe-project/media/bed_with_cat.png" alt="bed_with_cat">
+                <img class="s_intro_bed_cat_img" src="media/bed_with_cat.png" alt="bed_with_cat">
             </div>
             <div class="s_intro_txt">
                 <h2 class="s_intro_txt_1">Lorem Ipsum is simply
@@ -408,27 +466,27 @@
 
             <div class="s_contents_catimgbox">
                 <div class="s_contents_catimgbox_1">
-                    <img class="s_contents_catimgbox_1_1_img" src="../hodu-fe-project/media/img_1_1.png" alt="cat_1_1">
-                    <img class="s_contents_catimgbox_1_2_img" src="../hodu-fe-project/media/img_1_2.png" alt="cat_1_2">
-                    <img class="s_contents_catimgbox_1_3_img" src="../hodu-fe-project/media/img_1_3.png" alt="cat_1_3">
+                    <img class="s_contents_catimgbox_1_1_img" src="media/img_1_1.png" alt="cat_1_1">
+                    <img class="s_contents_catimgbox_1_2_img" src="media/img_1_2.png" alt="cat_1_2">
+                    <img class="s_contents_catimgbox_1_3_img" src="media/img_1_3.png" alt="cat_1_3">
                 </div>
                 <div class="s_contents_catimgbox_2">
-                    <img class="s_contents_catimgbox_2_1_img" src="../hodu-fe-project/media/img_2_1.png" alt="cat_2_1">
-                    <img class="s_contents_catimgbox_2_2_img" src="../hodu-fe-project/media/img_2_2.png" alt="cat_2_2">
-                    <img class="s_contents_catimgbox_2_3_img" src="../hodu-fe-project/media/img_2_3.png" alt="cat_2_3">
+                    <img class="s_contents_catimgbox_2_1_img" src="media/img_2_1.png" alt="cat_2_1">
+                    <img class="s_contents_catimgbox_2_2_img" src="media/img_2_2.png" alt="cat_2_2">
+                    <img class="s_contents_catimgbox_2_3_img" src="media/img_2_3.png" alt="cat_2_3">
                 </div>
             </div>
 
             <div class="s_contents_showmore">
                 <p class="s_contents_showmore_txt">Continue exploring HODU</p>
-                <button class="s_showmore_btn">Show more</button>
+                <button class="s_contents_showmore_btn">Show more</button>
                 <div class="s_contents_showmore_bottom_line"></div>
             </div>
 
             <div class="s_contents_address">
                 <p class="s_contents_address_txt_1">Where you’ll be</p>
                 <p class="s_contents_address_txt_2">330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</p>
-                <div class="s_contents_address_map">카카오 api</div>
+                <div id="s_contents_address_map">카카오 api</div>
             </div>
 
         </div>
@@ -436,7 +494,7 @@
 
     <footer class="f_area">
             <div class="f_contents">
-                <img class = "f_middle_background_img" src="../hodu-fe-project/media/outro.png" alt="outro">
+                <img class = "f_middle_background_img" src="media/outro.png" alt="outro">
                 <div class="f_subscribe">
                     <div class="f_subscribe_txt">
                         <p class="f_subscribe_txt_1">Subscribe to our Blog post</p>
@@ -444,16 +502,18 @@
                             Lorem Ipsum has been the industry's standard dummy text </p>
                     </div>
                     <div class = "f_subscribe_input_wrap">
-                        <img class = "f_subscribe_input_img" src="../hodu-fe-project/media/mail.png" alt="mail">
+                        <img class = "f_subscribe_input_img" src="media/mail.png" alt="mail">
                         <input class="f_subscribe_input" type="email" name="email_input" placeholder="Enter your e-mail address">
                         <button class="f_subscribe_input_btn">Subscribe</button>
                     </div>
                 </div>
+                <div id="scroll_top"></div>
+<!--                    <img class="scroll_top_off_btn" src="media/scroll-top-btn-off.png" alt="scroll_top_off_off">-->
             </div>
 
             <div class="f_outro">
                 <div class="f_outro_wrap">
-                    <img class="f_outro_logo_img" src="../hodu-fe-project/media/Logo-fin.png" alt="logo_outro">
+                    <img class="f_outro_logo_img" src="media/Logo-fin.png" alt="logo_outro">
                     <div class="f_outro_btn_wrap">
                         <button class="f_outro_blog_btn" onclick="window.open('http://www.naver.com') "></button>
                         <button class="f_outro_instagram_btn" onclick="window.open('http://www.instagram.com') "></button>
@@ -465,5 +525,24 @@
 
     </footer>
 </div>
+
+<div id="modal">
+    <div class="modal_wrap">
+        <img class="modal_cat_img" src="media/modal_cat.png" alt="modal_cat">
+        <div class="modal_thank_you">
+            <h1>Thank you!</h1>
+            <h3>Lorem Ipsum is simply dummy text of the printing industry.</h3>
+        </div>
+        <div class="modal_btn">
+            <button class="modal_ok_btn">OK! I Love HODU</button>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="script/modal-subscribe-btn.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=30a5b660ce2e2facc7c893a9445d6317"></script>
+<script type="text/javascript" src="script/kakaomap.js"></script>
+<script type="text/javascript" src="script/scroll-top.js"></script>
 </body>
 </html>
