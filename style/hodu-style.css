@@ -60,7 +60,7 @@ a{
     align-items: center;
     width: 600px;
     height: 400px;
-    background-image: url("../media/Modal_Background.png");
+    background-image: url("../media/modal_background.png");
     box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
     border-radius: 30px;
 }
