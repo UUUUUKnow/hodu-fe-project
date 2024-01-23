@@ -3,427 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>HODU</title>
-    <style>
-        @font-face {
-            font-family: 'Pretendard';
-            font-weight: 400;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.eot?#iefix') format('embedded-opentype'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.woff2') format('woff2'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.woff') format('woff'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.ttf') format("truetype");
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Pretendard';
-            font-weight: 500;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.eot?#iefix') format('embedded-opentype'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.woff2') format('woff2'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.woff') format('woff'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.ttf') format("truetype");
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Pretendard';
-            font-weight: 700;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.eot?#iefix') format('embedded-opentype'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.woff2') format('woff2'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.woff') format('woff'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.ttf') format("truetype");
-            font-display: swap;
-        }
+    <link rel="icon" href="media/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/hodu-font.css"/>
+    <link rel="stylesheet" href="style/hodu-style.css"/>
 
-        html{
-            height: 100%;
-            background-color: #FFFFFF;
-        }
-        body{
-            font-family: Pretendard;
-            font-size: 16px;
-            font-weight: 400;
-            font-style: normal;
-            color: #000000;
-            margin: 0px;
-            padding: 0px;
-            border: 0px;
-        }
-        header button, .s_contents_showmore_btn, footer button, #modal button{
-            font-family: Pretendard;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            background-color: #D97652;
-            color: #FFFFFF;
-            border: 0px;
-            border-radius: 40px;
-            width: 140px;
-            height: 50px;
-            padding: 0px;
-            cursor: pointer;
-        }
-        p{
-            margin: 0;
-        }
-        #modal{
-            position: fixed;
-            display: none;
-            justify-content: center;
-            align-content: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 999;
-        }
-        #modal .modal_wrap{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 600px;
-            height: 400px;
-            background-image: url("media/Modal_Background.png");
-            box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
-            border-radius: 30px;
-        }
-        #modal .modal_cat_img{
-            margin-top: 60px;
-        }
-        #modal .modal_thank_you{
-            text-align: center;
-        }
-        #modal .modal_thank_you h1{
-            font-size: 36px;
-            font-weight: 700;
-            color: #D97652;
-            margin: 24px 0px 0px;
-        }
-        #modal .modal_thank_you h3{
-            font-size: 14px;
-            font-weight: 400;
-            margin: 12px 0px 0px;
-        }
-        #modal .modal_ok_btn{
-            margin-top: 38px;
-            width: 183px;
-            height: 50px;
-        }
-        #scroll_top{
-            position: absolute;
-            background-image: url("media/scroll-top-btn-off.png");
-            /*display: none;*/
-            /*justify-content: center;*/
-            /*align-content: center;*/
-            width: 50px;
-            height: 50px;
-            bottom: 19px;
-            right: 24px;
-            z-index: 99;
-            cursor: pointer;
-        }
-        #scroll_top:hover{
-            background-image: url("media/scroll-top-btn-on.png");
-        }
-        .container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        /* header CSS start */
-        header.h_area{
-            background-color: #F2E9D8;
-            height: 900px;
-            width: 100%;
-        }
-        header .h_top_category{
-            width: 1280px;
-            height: 102px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0px auto;
-        }
-        header .h_top_menu{
-            display: flex;
-            align-items: center;
-        }
-        header li{
-            list-style-type: none;
-            padding: 0px 0px 0px 30px;
-
-        }
-        header .h_top_download_btn{
-            margin-left: 50px;
-        }
-        header .h_intro{
-            width: 1280px;
-            display: flex;
-            justify-content: space-between;
-            margin: 0px auto;
-        }
-        header .h_intro_txt{
-            display: flex;
-            flex-direction: column;
-            margin-top: 200px;
-        }
-        header .h_intro_txt_1{
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 1.3;
-            white-space: pre-line;
-            margin-bottom: 40px;
-        }
-        header .h_intro_txt_2{
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.3;
-            white-space: pre-line;
-            margin-bottom: 40px;
-        }
-        header .h_intro_box_cat_img{
-            margin-top: 32px;
-            width: 415px;
-            height: 766px;
-        }
-        /* header CSS end */
-
-        /* section CSS start */
-        section.s_area{
-            width: 100%;
-        }
-        section .s_intro{
-            width: 1280px;
-            display: flex;
-            justify-content: space-between;
-            margin: 0px auto;
-        }
-        section .s_intro_txt{
-            display: flex;
-            flex-direction: column;
-            margin: 172px 0px 0px 110px;
-        }
-        section .s_intro_txt_1, .s_contents_address_txt_1, footer .f_subscribe_txt_1{
-            font-weight: 700;
-            font-size: 36px;
-        }
-        section .s_intro_txt_1{
-            white-space: pre-line;
-            line-height: 1.3;
-            width: 510px;
-            height: 135px;
-            margin: 0px 0px 30px;
-        }
-        section .s_intro_txt_2{
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 1.3;
-            width: 510px;
-            height: 40px;
-        }
-        section .s_intro_bed_cat_img{
-            margin-top: 80px;
-        }
-        section .s_intro_bed_cat_img, .s_contents_catimgbox_1_1_img, .s_contents_catimgbox_1_2_img, .s_contents_catimgbox_1_3_img, .s_contents_catimgbox_2_1_img, .s_contents_catimgbox_2_2_img, .s_contents_catimgbox_2_3_img{
-            border-radius: 30px;
-            box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
-        }
-        section .s_contents{
-            width: 1280px;
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-        }
-        section .s_contents_txt{
-            margin-top: 120px;
-            text-align: center;
-        }
-        section .s_contents_txt_1{
-            margin: 0;
-            font-weight: 700;
-            font-size: 48px;
-            color: #D97652;
-        }
-        section .s_contents_txt_2{
-            margin: 40px 0px 0px;
-            white-space: pre-line;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 1.3;
-        }
-        section span{
-            color: #D97652;
-            font-weight: 700;
-        }
-        section .s_contents_catimgbox{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        section .s_contents_catimgbox_1, .s_contents_catimgbox_2{
-            display: flex;
-        }
-        section .s_contents_catimgbox_1{
-            margin-top: 88px;
-        }
-        section .s_contents_catimgbox_2{
-            margin-top: 72px;
-        }
-        section .s_contents_catimgbox_1_2_img, .s_contents_catimgbox_2_2_img{
-            margin: 0px 72px;
-        }
-        section .s_contents_showmore{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-        section .s_contents_showmore_txt{
-            margin: 100px 0px 28px 0px;
-            font-size: 24px;
-            font-weight: 700;
-        }
-        section .s_contents_showmore_bottom_line{
-            width: 100%;
-            margin-top: 80px;
-            border: 1px #C4C4C4 solid;
-        }
-        section .s_contents_address{
-            display: flex;
-            flex-direction: column;
-        }
-        section .s_contents_address_txt_1{
-            margin: 68px 0px 20px 0px;
-        }
-        section .s_contents_address_txt_2{
-            font-weight: 500;
-        }
-        section #s_contents_address_map{
-            margin-top: 48px;
-            height: 520px;
-            border-radius: 12px;
-        }
-        /* section CSS end */
-
-        /* footer CSS start */
-        footer.f_area, .f_middle_background_img{
-            width: 100%;
-        }
-        footer .f_middle_background_img{
-            height: 340px;
-        }
-        footer .f_contents{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            margin: 181px auto 0px;
-        }
-        footer .f_subscribe{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: -101px;
-            width: 1280px;
-            height: 200px;
-            background-color: #263140;
-            border-radius: 30px;
-        }
-        footer .f_subscribe_txt{
-            display: flex;
-            flex-direction: column;
-            margin-right: 163px;
-        }
-        footer .f_subscribe_txt_1, .f_subscribe_txt_2{
-            color: #FFFFFF;
-        }
-        footer .f_subscribe_txt_2{
-            white-space: pre-line;
-            font-size: 14px;
-            margin-top: 18px;
-        }
-        footer .f_subscribe_input_wrap{
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        footer .f_subscribe_input_img{
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 28px;
-        }
-        footer .f_subscribe_input{
-            width: 530px;
-            height: 60px;
-            border-radius: 60px;
-            text-indent: 68px;
-        }
-        footer input::placeholder{
-            font-family: Pretendard;
-            color: #767676;
-            font-size: 16px;
-            font-weight: 400;
-        }
-        footer .f_subscribe_input_btn{
-            width: 135px;
-            position: absolute;
-            right: 6px;
-        }
-        footer .f_outro{
-            width: 100%;
-        }
-        footer .f_outro_wrap{
-            width: 1280px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 45px auto;
-        }
-        footer .f_outro_logo_img{
-            width: 226px;
-            height: 70px;
-        }
-        footer .f_outro_btn_wrap{
-            display: flex;
-
-        }
-        footer .f_outro_blog_btn, .f_outro_instagram_btn, .f_outro_facebook_btn, .f_outro_youtube_btn{
-            width: 42px;
-            height: 42px;
-            margin-right: 20px;
-        }
-        footer .f_outro_blog_btn{
-            background-image: url("media/icon-blog.png");
-        }
-        footer .f_outro_instagram_btn{
-            background-image: url("media/icon-insta.png");
-        }
-        footer .f_outro_facebook_btn{
-            background-image: url("media/icon-facebook.png");
-        }
-        footer .f_outro_youtube_btn{
-            background-image: url("media/icon-youtube.png");
-        }
-    /* footer CSS end */
-    </style>
 </head>
 <body>
-<div class="container">
-    <header class="h_area">
+<div id="container">
+    <header id="h_area">
         <div class="h_top_category">
             <img src="media/Logo-fin.png" alt="HODU_LOGO">
 
             <nav class="h_top_menu">
-                <ul class="h_top_menu">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Support</li>
+                <ul class="h_top_menu_contents">
+                    <a href="#h_area"><li>Home</li></a>
+                    <a href="#s_area"><li>About</li></a>
+                    <a href="#f_area"><li>Support</li></a>
                 </ul>
-                <button class="h_top_download_btn">Download</button>
+                <a class="h_top_href_download_btn" href="media/happy.gif" download><button class="h_top_download_btn">Download</button></a>
             </nav>
         </div>
 
@@ -435,7 +32,7 @@
                     typesetting industry.
                     Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown</h3>
-                <button class="h_download_btn">Download</button>
+                <a class="h_intro_href_download_btn" href="media/flower_cat.gif" download><button class="h_download_btn">Download</button></a>
             </div>
             <div class="h_intro_box_cat_img">
                 <img src="media/heading_cat.png" alt="box_cat">
@@ -443,7 +40,7 @@
         </div>
     </header>
 
-    <section class="s_area">
+    <section id="s_area">
         <div class="s_intro">
             <div class="s_intro_bed_cat" >
                 <img class="s_intro_bed_cat_img" src="media/bed_with_cat.png" alt="bed_with_cat">
@@ -475,24 +72,30 @@
                     <img class="s_contents_catimgbox_2_2_img" src="media/img_2_2.png" alt="cat_2_2">
                     <img class="s_contents_catimgbox_2_3_img" src="media/img_2_3.png" alt="cat_2_3">
                 </div>
+                <div class="s_contents_catimgbox_infi">
+                    <ul class="s_contents_image_infi"></ul>
+                </div>
             </div>
 
             <div class="s_contents_showmore">
                 <p class="s_contents_showmore_txt">Continue exploring HODU</p>
-                <button class="s_contents_showmore_btn">Show more</button>
+                <div class="s_contetns_btn_wrap">
+                    <button class="s_contents_showmore_btn">Show more</button>
+                    <button class="s_contents_cancle_btn">Cancle</button>
+                </div>    
                 <div class="s_contents_showmore_bottom_line"></div>
             </div>
 
             <div class="s_contents_address">
                 <p class="s_contents_address_txt_1">Where you’ll be</p>
                 <p class="s_contents_address_txt_2">330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</p>
-                <div id="s_contents_address_map">카카오 api</div>
+                <div id="s_contents_address_map">Kakao Map API</div>
             </div>
 
         </div>
     </section>
 
-    <footer class="f_area">
+    <footer id="f_area">
             <div class="f_contents">
                 <img class = "f_middle_background_img" src="media/outro.png" alt="outro">
                 <div class="f_subscribe">
@@ -508,7 +111,6 @@
                     </div>
                 </div>
                 <div id="scroll_top"></div>
-<!--                    <img class="scroll_top_off_btn" src="media/scroll-top-btn-off.png" alt="scroll_top_off_off">-->
             </div>
 
             <div class="f_outro">
@@ -539,10 +141,11 @@
     </div>
 </div>
 
-
 <script type="text/javascript" src="script/modal-subscribe-btn.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=30a5b660ce2e2facc7c893a9445d6317"></script>
 <script type="text/javascript" src="script/kakaomap.js"></script>
 <script type="text/javascript" src="script/scroll-top.js"></script>
+<script type="text/javascript" src="script/Infinite-scroll.js"></script>
+
 </body>
 </html>
